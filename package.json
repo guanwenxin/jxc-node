@@ -14,5 +14,13 @@
     "mysql": "^2.18.1"
   },
   "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guanwenxin/jxc-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/guanwenxin/jxc-node/issues"
+  },
+  "homepage": "https://github.com/guanwenxin/jxc-node#readme",
   "description": ""
 }
