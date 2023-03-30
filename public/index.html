@@ -1,12 +1,28 @@
 <html lang="zh-CN">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>用户登录</title>
-    <link rel="stylesheet" href="./login/index_log.css" />
-  </head>
 
-  <body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>用户登录</title>
+  <link rel="stylesheet" href="./login/index_log.css" />
+</head>
+
+<body>
+  <div class="background"></div>
+  <div class="container">
+     <!-- 左边 -->
+     <div class="item">
+      <h2 class="logo"><i class='bx bxl-xing'></i>guan企业进销存管理系统</h2>
+      <div class="text-item">
+          <h2>Welcome! <br><span>
+              To G Invoicing and inventory management system
+          </span></h2>
+          <p>Every penny of hard work is a harvest!!!</p>
+      </div>
+  </div>
+
+    <!-- 登陆部分start -->
+    <div class="login-section">
     <div class="login">
       <h2>用户登录</h2>
       <div class="login_box">
@@ -15,13 +31,7 @@
         <label for="username">用户名</label>
       </div>
       <div class="login_box">
-        <input
-          type="password"
-          name="password"
-          id="password"
-          autocomplete="off"
-          required="required"
-        />
+        <input type="password" name="password" id="password" autocomplete="off" required="required" />
         <label for="password">密码</label>
       </div>
       <div class="login_reg">
@@ -30,8 +40,7 @@
           <span></span>
           <span></span>
           <span></span>
-          <span></span> </a
-        ><a href="./login/register.html">
+          <span></span> </a><a href="./login/register.html">
           注册
           <span></span>
           <span></span>
@@ -40,23 +49,28 @@
         </a>
       </div>
     </div>
-  </body>
-  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
-  <script>
-    $("#login").on("click", function () {
-      let account = $("#account").val();
-      let password = $("#password").val();
-      $.post("http://localhost:3000/login", {
-        account,
-        password,
-      }).then((res) => {
-        if(res.code==200){
-          location.href=`http://localhost:5000/?account=${account}`
-          alert(res.msg)
-        }else{
-          alert(res.msg)
-        }
-      });
+  </div>
+    <!-- 登陆部分end -->
+
+  </div>
+</body>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+<script>
+  $("#login").on("click", function () {
+    let account = $("#account").val();
+    let password = $("#password").val();
+    $.post("http://localhost:3000/login", {
+      account,
+      password,
+    }).then((res) => {
+      if (res.code == 200) {
+        location.href = `http://localhost:5000/?account=${account}`
+        alert(res.msg)
+      } else {
+        alert(res.msg)
+      }
     });
-  </script>
+  });
+</script>
+
 </html>
