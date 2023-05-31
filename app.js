@@ -512,7 +512,7 @@ app.post("/agreestock", function (req, res, next) {
 
 //销售价格,数量,申请人写入表中
 app.post("/setstocksale", function (req, res, next) {
-  // console.log(req.body);
+  console.log(req.body);
   pool.query(`update stock set sale_price="${req.body.sale_price}",goos_cost="${req.body.sale_price * req.body.sale_num}",sale_num="${req.body.sale_num}" ,goout_time="${req.body.goout_time}",sale_account="${req.body.sale_account}" where goods_code="${req.body.goods_code}"`, function (err, data) {
     console.log(data);
     if (data.affectedRows) {
